@@ -1,7 +1,8 @@
-import Products from "./Components/Products/Products";
+import { Navbar, Products } from "./Components";
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Products />
     </div>
   );

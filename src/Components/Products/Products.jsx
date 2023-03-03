@@ -1,6 +1,8 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import Product from "../Product/Product";
+import Product from "./Product/Product";
+import styles from "./Products.module.css";
+
 const products = [
   {
     id: 1,
@@ -19,7 +21,7 @@ const products = [
 ];
 const Products = () => {
   return (
-    <main>
+    <main className={styles.Container}>
       <Grid container justifyContent="center" spacing={4}>
         {products.map((elem) => (
           <Grid item key={products.id} xs={12} sm={6} md={4} lg={3}>

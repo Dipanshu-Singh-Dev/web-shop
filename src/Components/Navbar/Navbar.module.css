@@ -1,0 +1,28 @@
+.appBar{
+    box-shadow: none;
+    height: 10vh;
+}
+.title{
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+.image{
+    margin-right: 10px;
+}
+.menuButton{}
+.grow{
+    flex-grow: 1;
+    
+}
+.search{
+    position: relative;
+    width: 100%;
+}
+.inputRoot{
+    color: inherit;
+}
+.inputInput{
+    width: 100%;
+}
