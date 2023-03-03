@@ -1,3 +1,4 @@
 .Container{
-    margin-top: 14vh;
+    max-width: 90%;
+    margin:13vh auto 5vh auto;
 }
