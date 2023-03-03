@@ -1,5 +1,8 @@
 .root{
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .media{
   height: 0;
