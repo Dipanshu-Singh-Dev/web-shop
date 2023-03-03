@@ -11,7 +11,9 @@ import {
 import { ShoppingCart } from "@mui/icons-material";
 import styles from "./Navbar.module.css";
 import logo from "../../door.png";
-const Navbar = () => {
+import { Navigate, Link } from "react-router-dom";
+
+const Navbar = ({ items }) => {
   return (
     <>
       <AppBar className={styles.appBar} color="inherit">
@@ -25,10 +27,13 @@ const Navbar = () => {
             />
             Discount Dungeon
           </Typography>
-          <div className={styles.grow} />
           <div>
-            <IconButton aria-label="Show Cart Items" color="inherit">
-              <Badge badgeContent={2} color="secondary">
+            <IconButton
+              href="/cart"
+              aria-label="Show Cart Items"
+              color="inherit"
+            >
+              <Badge badgeContent={items} color="primary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
