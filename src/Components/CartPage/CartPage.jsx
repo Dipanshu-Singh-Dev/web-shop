@@ -60,12 +60,7 @@ const CartPage = ({ cart, handleUpdateCart, onEmptyCart }) => {
   );
   return (
     <Container>
-      <div className={styles.root}>
-        <Typography gutterBottom className={styles.title} variant="h3">
-          Your Shopping Cart
-        </Typography>
-        {isEmpty ? EmptyCart : FilledCart}
-      </div>
+      <div className={styles.root}>{isEmpty ? EmptyCart : FilledCart}</div>
     </Container>
   );
 };
