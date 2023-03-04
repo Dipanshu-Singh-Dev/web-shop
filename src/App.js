@@ -7,7 +7,6 @@ function App() {
   const [cart, setCart] = useState();
   const fetchCart = async () => {
     commerce.cart.retrieve().then((cart) => {
-      console.log(cart);
       setCart(cart);
     });
   };
@@ -30,7 +29,9 @@ function App() {
         console.log("There was an error updating the cart items", error);
       });
   };
-  console.log(cart);
+  const onEmptyCart = () => {
+    commerce.cart.empty().then((response) => setCart(response));
+  };
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -49,7 +50,11 @@ function App() {
           <Route
             path="cart"
             element={
-              <CartPage cart={cart} handleUpdateCart={handleUpdateCart} />
+              <CartPage
+                cart={cart}
+                handleUpdateCart={handleUpdateCart}
+                onEmptyCart={onEmptyCart}
+              />
             }
           />
         </Routes>
