@@ -11,7 +11,7 @@ import {
 import { ShoppingCart } from "@mui/icons-material";
 import styles from "./Navbar.module.css";
 import logo from "../../door.png";
-import { Navigate, Link } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const Navbar = ({ items }) => {
   return (
@@ -20,6 +20,7 @@ const Navbar = ({ items }) => {
         <Toolbar>
           <Typography variant="h6" className={styles.title} color="inherit">
             <img
+              onClick={() => redirect("/")}
               src={logo}
               alt="Discount Dugeon"
               height="25px"
