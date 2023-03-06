@@ -3,8 +3,16 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 75%;
-    margin: 2% auto;
+    position: absolute;
+    min-width: 75%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+@media screen and (max-width:1000px) {
+    .paper{
+        min-width: 95%;
+    }
 }
 .stepper{
     width:75%;

@@ -14,11 +14,30 @@ import AddressForm from "./AddressForm/AddressForm";
 import Confirmation from "./Confirmation/Confirmation";
 import PaymentForm from "./PaymentForm/PaymentForm";
 import styles from "./CheckoutForm.module.css";
-
-const CheckOutForm = () => {
-  const [currStep, setCurrStep] = useState(1);
+import { commerce } from "../../lib/commerce";
+const CheckOutForm = ({ cart }) => {
+  // console.log(cart);
+  const [currStep, setCurrStep] = useState(0);
+  const [checkoutToken, setCheckOutToken] = useState(null);
   const steps = ["Shipping Address", "Payment details"];
-  const stepForms = [<AddressForm />, <PaymentForm />, <Confirmation />];
+  const stepForms = [
+    <AddressForm token={checkoutToken} />,
+    <PaymentForm />,
+    <Confirmation />,
+  ];
+  useEffect(() => {
+    const generateToken = async () => {
+      try {
+        const token = await commerce.checkout.generateToken(cart.id, {
+          type: "cart",
+        });
+        setCheckOutToken(token);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if (cart) generateToken();
+  }, []);
   return (
     <>
       <Paper className={styles.paper}>
