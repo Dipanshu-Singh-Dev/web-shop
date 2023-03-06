@@ -35,7 +35,7 @@ const Products = ({ products, onAddToCart }) => {
         </Grid>
       </main>
     ) : (
-      <CircularProgress className={styles.loading} />
+      <CircularProgress className="loading" />
     );
   return res;
 };

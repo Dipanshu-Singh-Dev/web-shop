@@ -2,10 +2,3 @@
     max-width: 90%;
     margin:13vh auto 5vh auto;
 }
-.loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}

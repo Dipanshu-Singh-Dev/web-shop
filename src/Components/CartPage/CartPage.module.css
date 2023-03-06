@@ -6,13 +6,7 @@
 .grid{
     margin: 50px auto;
 }
-.loading{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
-}
+
 .footer{
     margin: 20px;
     padding: 20px;

@@ -1,0 +1,12 @@
+.paper{
+    padding: 20px 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 75%;
+    margin: 2% auto;
+}
+.stepper{
+    width:75%;
+    margin: auto;
+}

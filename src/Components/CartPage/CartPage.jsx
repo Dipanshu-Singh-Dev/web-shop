@@ -1,12 +1,11 @@
 import React from "react";
 import styles from "./CartPage.module.css";
-import { ProgressBar } from "react-loader-spinner";
 import CartItem from "./CartItem/CartItem";
-import { Container, Card, Typography, Button, Grid } from "@mui/material";
+import { Container, Typography, Button, Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 const CartPage = ({ cart, handleUpdateCart, onEmptyCart }) => {
   if (!cart) {
-    return <CircularProgress className={styles.loading} />;
+    return <CircularProgress className="loading" />;
   }
   const { subtotal, line_items: lineItems } = cart;
   const isEmpty = !lineItems.length;
@@ -51,6 +50,7 @@ const CartPage = ({ cart, handleUpdateCart, onEmptyCart }) => {
             type="button"
             variant="contained"
             color="primary"
+            href="/checkout"
           >
             Checkout
           </Button>

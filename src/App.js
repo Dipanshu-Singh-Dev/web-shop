@@ -1,4 +1,4 @@
-import { Navbar, Products, CartPage } from "./Components";
+import { Navbar, Products, CartPage, Checkout } from "./Components";
 import { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -38,25 +38,31 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Navbar items={cart?.total_items} />
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
             element={
-              <Products products={products} onAddToCart={handleAdd2Cart} />
+              <>
+                <Navbar items={cart?.total_items} />
+                <Products products={products} onAddToCart={handleAdd2Cart} />
+              </>
             }
           />
           <Route
             path="cart"
             element={
-              <CartPage
-                cart={cart}
-                handleUpdateCart={handleUpdateCart}
-                onEmptyCart={onEmptyCart}
-              />
+              <>
+                <Navbar items={cart?.total_items} />
+                <CartPage
+                  cart={cart}
+                  handleUpdateCart={handleUpdateCart}
+                  onEmptyCart={onEmptyCart}
+                />
+              </>
             }
           />
+          <Route path="checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </div>
